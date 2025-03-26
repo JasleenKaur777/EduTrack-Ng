@@ -1,0 +1,33 @@
+body {
+  background: linear-gradient(to right, #b5a2ca, #94db99);
+    min-height: 92vh;
+
+    text-align: center;
+}
+.dashboard-container {
+    padding: 40px 20px;
+}
+.dashboard-image {
+  width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.dashboard-title {
+  font-size: 3rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.dashboard-text {
+  font-size: 1.2rem;
+    margin-top: 15px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}

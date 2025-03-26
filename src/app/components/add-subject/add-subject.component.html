@@ -1,0 +1,22 @@
+<app-admin-menu></app-admin-menu>
+<body>
+  <div class="card-container">
+    <!-- Left: Image Section -->
+    <div class="image-container">
+        <img src="assets/images/subject.jpeg" alt="Subject Icon" class="form-image">
+    </div>
+
+    <!-- Right: Form Section -->
+    <div class="form-container">
+        <h2 class="mb-3">Add Subject</h2>
+        <form>
+            <div class="mb-3">
+                <label for="subjectName" class="form-label" >Subject Name</label>
+                <input type="text" class="form-control" id="subjectName" name="name" placeholder="Enter Subject Name" [(ngModel)]="subject.name" required>
+            </div>
+            <button type="submit" class="btn btn-custom" (click)="addSubject()">Add Subject</button>
+        </form>
+    </div>
+</div>
+</body>
+

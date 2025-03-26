@@ -1,0 +1,83 @@
+<app-faculty-menu></app-faculty-menu>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Take Attendance</title>
+    <style>
+        body {
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        .form-container, .table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .table-container {
+            margin-top: 20px;
+        }
+        .btn-submit {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Attendance Form -->
+    <div class="form-container">
+        <h4 class="text-center mb-4">Take Attendance</h4>
+        <div class="row align-items-center">
+            <!-- Subject Dropdown -->
+            <div class="col-md-4">
+                <label for="subject" class="form-label">Subject</label>
+                <select class="form-select" id="subject" (change)="changeSubject($event)">
+                    <option selected>Choose...</option>
+                    <option *ngFor="let subject of subjectlist" [value]="subject.id">{{subject.name}}</option>
+                </select>
+            </div>
+
+            <!-- Date Input -->
+            <div class="col-md-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date" (change)="changeDate($event)">
+            </div>
+
+            <!-- Time Input -->
+            <div class="col-md-3">
+                <label for="time" class="form-label">Time</label>
+                <input type="time" class="form-control" id="time" (change)="changeTime($event)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Student List Table -->
+    <div class="table-container">
+        <h5 class="text-center mb-3">Student Attendance</h5>
+        <table class="table table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Student Name</th>
+                    <th> <input type="checkbox" id="selectAll"  (change)="toggleAll($event)"  [checked]="studentlist.length===selectedstudent.length"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of studentlist,let i=index"><td>{{i+1}}</td><td>{{student.name}}</td><td><input type="checkbox" [checked]="selectedstudent.includes(student.id)" (change)="toogleStudent(student.id)"></td></tr>
+            </tbody>
+        </table>
+
+        <!-- Submit Button -->
+        <div class="btn-submit">
+            <button class="btn btn-primary px-5" (click)="submitAttendance()">Submit</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

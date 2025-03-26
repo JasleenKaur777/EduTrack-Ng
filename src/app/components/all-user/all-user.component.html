@@ -1,0 +1,32 @@
+<app-admin-menu></app-admin-menu>
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Action</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of objlist">
+        <td>{{item.username|titlecase}}</td>
+        <td>{{item.password | hidePassword}}</td>
+        <td>{{item.firstName | titlecase}}</td>
+        <td>{{item.lastName | titlecase}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.role}}</td>
+        <td>
+          <button class="btn btn-success" [routerLink]="['/edit-user',item.username]">Edit</button>&nbsp;&nbsp;
+          <button class="btn btn-danger" (click)="DeleteUser(item.username)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

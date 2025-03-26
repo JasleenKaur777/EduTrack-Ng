@@ -1,0 +1,73 @@
+ /* General Body Styling */
+ body {
+  background: linear-gradient(to right, #d4c9df, #7da5ea);
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Form Container */
+.container {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid white;
+}
+
+/* Form Title */
+h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Input Fields */
+.form-control {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  box-shadow: 0px 0px 10px #ffcc00;
+  border: 2px solid #ffcc00;
+}
+
+/* Custom Button */
+.btn-custom {
+  background: #ffcc00;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: #e6b800;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+      padding: 20px;
+  }
+}

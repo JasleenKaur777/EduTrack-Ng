@@ -1,0 +1,32 @@
+body {
+  background: linear-gradient(to right, #11cb84, #c5ccda);
+  min-height: 90vh;
+  font-family: Arial, sans-serif;
+  padding-top: 50px;
+}
+.container {
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.form-label {
+  font-weight: bold;
+}
+.btn-custom {
+  background: #ffcc00;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+.btn-custom:hover {
+  background: #e6b800;
+  color: white;
+}

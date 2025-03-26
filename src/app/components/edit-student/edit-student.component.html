@@ -1,0 +1,48 @@
+<app-faculty-menu></app-faculty-menu>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Student</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center mb-4">Edit Student</h2>
+
+        <div class="row">
+            <!-- Image Section (Left) -->
+            <div class="col-md-4 image-container">
+                <img class="image-preview" src="assets/images/student.jpeg" alt="Student Picture">
+            </div>
+
+            <!-- Form Section (Right) -->
+            <div class="col-md-8 form-section">
+                <form [formGroup]="studentForm" (ngSubmit)="updatestudent()">
+
+
+                    <input type="text" class="form-control" id="id" formControlName="id" hidden>
+
+
+                    <!-- Name -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter name" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter email" required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-custom">Update Student</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

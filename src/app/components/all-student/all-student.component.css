@@ -1,0 +1,57 @@
+body {
+  background-color:#82c082;
+   height:92vh;
+
+  padding: 30px;
+
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 1200px;
+}
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+table {
+  background: white;
+  color: black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background: linear-gradient(to right, #11cb1d, #2575fc);
+  color: white;
+}
+
+.btn-edit {
+  background: #ffc107;
+  color: black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.btn-edit:hover {
+  background: #e0a800;
+}
+
+.btn-delete:hover {
+  background: #c82333;
+}

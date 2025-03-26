@@ -1,0 +1,47 @@
+.table-container {
+  padding: 20px;
+  margin: auto;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  font-size: 18px;
+  text-align: left;
+}
+
+/* Table Header */
+thead {
+  background: linear-gradient(to right, #11cb1d, #2575fc);
+  color: white;
+}
+
+/* Table Cells */
+th, td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect */
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Table */
+@media screen and (max-width: 768px) {
+  table {
+      font-size: 14px;
+  }
+  th, td {
+      padding: 10px;
+  }
+  .table-container {
+      overflow-x: auto;
+  }
+}

@@ -1,0 +1,90 @@
+<app-faculty-menu></app-faculty-menu>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Attendance</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Filter Row -->
+    <div class="row mb-3">
+      <div class="col-md-6 col-lg-4">
+        <label for="subject" class="form-label">Select Subject</label>
+        <select id="subject" class="form-select" (change)="changeSubject($event)">
+          <option value="">Choose Subject</option>
+          <option *ngFor="let subject of subjectlist" [value]="subject.id">{{ subject.name }}</option>
+        </select>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <label for="date" class="form-label">Select Date</label>
+        <input type="date" id="date" class="form-control" (change)="changeDate($event)">
+      </div>
+      <div class="col-md-12 col-lg-4 text-center mt-3  mt-lg-0">
+        <button class=" mt-4 btn btn-primary w-100 "  (click)="fetchAttendanceRecords()">Show</button>
+      </div>
+    </div>
+
+    <!-- Attendance Table -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Faculty</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Number of Students</th>
+            <th>Show Students</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of attendanceRecords; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ record.user.firstName | titlecase }} {{ record.user.lastName | titlecase }}</td>
+            <td>{{ record.subject.name | titlecase }}</td>
+            <td>{{ record.date | date }}</td>
+            <td>{{ record.time }}</td>
+            <td>{{ record.numberOfStudents }}</td>
+            <td>
+              <button class="btn btn-info btn-sm" (click)="showStudents(record.students)" data-bs-toggle="modal" data-bs-target="#studentModal">
+                Show
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Student Modal -->
+  <div *ngIf="isModalOpen" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-between">
+        <h5 class="modal-title">Student List</h5>
+        <button class="close-btn" (click)="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-6 col-md-4 mb-3" *ngFor="let student of selectedStudents">
+            <div class="student-card text-center">
+              {{ student.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
